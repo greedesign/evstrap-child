@@ -1,9 +1,11 @@
-.entry-content > .alignwide {
+.entry-content > .alignwide,
+.entry-header.alignwide {
   margin-left  : -80px;
   margin-right : -80px;
 }
 
-.entry-content > .alignfull {
+.entry-content > .alignfull,
+.entry-header.alignfull {
   margin-left  : calc( -100vw / 2 + 100% / 2 );
   margin-right : calc( -100vw / 2 + 100% / 2 );
   max-width    : 100vw;
