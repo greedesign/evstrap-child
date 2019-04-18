@@ -1,0 +1,64 @@
+/**
+ * Fixed navbar spacing on <body>
+ */
+body.navbar-is-fixed-top.admin-bar .fixed-top {
+  top: 46px;
+}
+
+@include media-breakpoint-up(md) {
+  body.navbar-is-fixed-top.admin-bar .fixed-top {
+    top: 32px;
+  }
+}
+
+// body.navbar-is-fixed-top #full-width-page-wrapper {
+//  padding-top: 0;
+// }
+
+// body.navbar-is-fixed-top #index-wrapper,
+// body.navbar-is-fixed-top #single-wrapper,
+// body.navbar-is-fixed-top #full-width-page-wrapper {
+//   padding-top: 85px;
+// }
+
+// body.navbar-is-fixed-top .entry-header,
+// body.navbar-is-fixed-top .entry-header {
+//   margin-top: 85px;
+// }
+
+// add top margin to to #site wrapper
+body.navbar-is-fixed-top:not(.page-custom-header) #page {
+  padding-top: 85px;
+}
+
+/**
+ * Logo
+ */
+.img-fluid.custom-logo { // remove default padding - possibly remove through class control in template files  
+  padding-top: 0;
+  padding-bottom: 0;
+  height: 40px; // image height
+  width: auto;
+}
+
+.navbar-brand.custom-logo-link { // remove default padding - possibly remove through class control in template files
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+
+/**
+ * Navbar nav-link styles
+ * * if planning on having more than one navbar element in the site,
+ * * these default styles should be duplicated and one of them should
+ * * scoped specificlly to the #main-menu
+ * 
+ */
+// All nabvar <a> */
+.navbar-nav .nav-link {}
+// navbar 1st level <a> 
+.navbar-nav > li > .nav-link {}
+// navbar dropdown items <a>
+.dropdown-item {}
+
+.ev-navbar-region a { color: inherit; } 

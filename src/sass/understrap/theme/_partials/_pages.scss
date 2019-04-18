@@ -1,0 +1,16 @@
+
+
+/**
+ * Article header
+ */
+.entry-header {
+  &.header-background-cover {
+    > * {
+      width: 100%;
+    }
+  }
+  &.justify-content-center {
+    text-align: center;
+  }
+}
+.entry-header--internal-links {}

@@ -204,10 +204,10 @@ gulp.task( 'copy-assets', function() {
         .pipe( gulp.dest( paths.js + paths.vendor ) );
 
 // UnderStrap SCSS files
-    gulp.src( paths.node + 'understrap/sass/**/*.scss' )
-        .pipe( gulp.dest( paths.dev + '/sass/understrap' ) );
+    // gulp.src( paths.node + 'understrap/sass/**/*.scss' )
+    //     .pipe( gulp.dest( paths.dev + '/sass/understrap' ) );
 
-    return stream;
+    // return stream;
 });
 
 // Deleting the files distributed by the copy-assets task
