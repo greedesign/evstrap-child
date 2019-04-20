@@ -41,7 +41,7 @@
     "gulp-rename": "^1.2.2",
     "gulp-replace": "1.0.0",
     "gulp-rimraf": "^0.2.2",
-    "gulp-sass": "4.0.1",
+    "gulp-sass": "^4.0.2",
     "gulp-sequence": "1.0.0",
     "gulp-sourcemaps": "2.6.4",
     "gulp-uglify": "^3.0.0",
@@ -50,7 +50,7 @@
     "merge2": "^1.2.1",
     "popper.js": "^1.14.7",
     "run-sequence": "^2.2.1",
-    "understrap": "github:greedesign/understrap",
+    "understrap": "git+https://github.com/greedesign/understrap.git",
     "undescores-for-npm": "^1.0.0"
   }
 }

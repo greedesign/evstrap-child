@@ -9,5 +9,5 @@
 @import "assets/underscores"; // <------- Underscores media styles
 
 // Any additional imported files //
-@import "../src/sass/understrap/theme/theme"; // <--------- Parent theme additional includes
+@import "../src/sass/understrap/theme"; // <--------- Parent theme additional includes
 @import "theme/child_theme";  // <--------- Add your styles into this file
