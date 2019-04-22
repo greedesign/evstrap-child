@@ -8351,4 +8351,10 @@ body.navbar-is-fixed-top:not(.page-custom-header) #page {
 .entry-header.justify-content-center {
   text-align: center; }
 
+/**
+ * Page Header
+ */
+.entry-header--internal-links .btn-link {
+  color: inherit; }
+
 /*# sourceMappingURL=child-theme.css.map */
