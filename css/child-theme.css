@@ -9263,6 +9263,10 @@ body.navbar-is-fixed-top:not(.page-custom-header) #page {
   .headroom:not(.headroom--top):not(.headroom--bottom).headroom--pinned .navbar.bg-transparent .ev-navbar-region a:not(.btn) {
     color: rgba(0, 0, 0, 0.8); }
 
+.navbar-is-fixed-top:not(.page-custom-header) .headroom .navbar.bg-transparent {
+  background-color: #7C008C !important;
+  color: rgba(255, 255, 255, 0.5); }
+
 /* Scroll State */
 .navbar {
   -webkit-transition: -webkit-transform 0.5s ease;
