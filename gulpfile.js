@@ -155,6 +155,13 @@ gulp.task( 'scripts', function() {
   gulp.src( scripts )
     .pipe( concat( 'child-theme.js' ) )
     .pipe( gulp.dest( paths.js ) );
+
+  gulp.src( paths.js + '/admin.js' )
+    .pipe( concat( 'admin.min.js' ) )
+    .pipe( uglify().on('error', function(e){
+      console.log(e);
+    }))
+    .pipe( gulp.dest( paths.js ) );
 });
 
 // Deleting any file inside the /src folder
@@ -203,9 +210,21 @@ gulp.task( 'copy-assets', function() {
     gulp.src( paths.node + 'popper.js/dist/umd/popper.js' )
         .pipe( gulp.dest( paths.js + paths.vendor ) );
 
+// Copy Understrap JS files
+    gulp.src( paths.node + 'understrap/src/js/custom-javascript.js' )
+        .pipe( gulp.dest( paths.dev + '/js' ) );
+
 // UnderStrap SCSS files
     gulp.src( paths.node + 'understrap/sass/**/*.scss' )
         .pipe( gulp.dest( paths.dev + '/sass/understrap' ) );
+
+// Copy Admin JS files
+gulp.src( paths.node + 'understrap/js/admin.min.js' )
+.pipe( gulp.dest( paths.js) );
+
+// Copy Admin CSS files
+gulp.src( paths.node + 'understrap/css/admin.min.css' )
+.pipe( gulp.dest( paths.css ) );
 
     return stream;
 });
