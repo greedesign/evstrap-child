@@ -146,11 +146,11 @@ sup {
 
 a {
   color: #7C008C;
-  text-decoration: none;
+  text-decoration: underline;
   background-color: transparent; }
   a:hover {
     color: #380040;
-    text-decoration: underline; }
+    text-decoration: none; }
 
 a:not([href]):not([tabindex]) {
   color: inherit;
@@ -2462,12 +2462,12 @@ fieldset:disabled a.btn {
 .btn-link {
   font-weight: 400;
   color: #7C008C;
-  text-decoration: none; }
+  text-decoration: underline; }
   .btn-link:hover {
     color: #380040;
-    text-decoration: underline; }
+    text-decoration: none; }
   .btn-link:focus, .btn-link.focus {
-    text-decoration: underline;
+    text-decoration: none;
     -webkit-box-shadow: none;
             box-shadow: none; }
   .btn-link:disabled, .btn-link.disabled {
@@ -9243,6 +9243,9 @@ body.navbar-is-fixed-top:not(.page-custom-header) #page {
  * * scoped specificlly to the #main-menu
  * 
  */
+.navbar-nav .nav-link {
+  text-decoration: none; }
+
 .navbar-dark .ev-navbar-region a:not(.btn) {
   color: rgba(255, 255, 255, 0.5); }
 
@@ -9300,5 +9303,17 @@ body.navbar-is-fixed-top:not(.page-custom-header) #page {
  */
 .entry-header--internal-links .btn-link {
   color: inherit; }
+
+/**
+ * Navbar
+ */
+/**
+ * Footer Wrapper
+ */
+#wrapper-footer-full {
+  background-image: url("/wp-content/uploads/2019/04/bg-denim.jpg");
+  color: #fff; }
+  #wrapper-footer-full a {
+    color: inherit; }
 
 /*# sourceMappingURL=child-theme.css.map */
