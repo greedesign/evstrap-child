@@ -64,4 +64,42 @@ jQuery( document ).ready(function($) {
     "tolerance": 5
   });
 
+  // Hide Navbar on scroll down
+  // $(window).scroll(function(e) {
+  //     // add/remove class to navbar when scrolling to hide/show
+  //     var scroll = $(window).scrollTop();
+  //     if (scroll >= 150) {
+  //         $('.navbar').addClass("navbar-hide");
+  //     } else {
+  //         $('.navbar').removeClass("navbar-hide");
+  //     }
+
+  // });
+
+  // var lastScrollTop = 0;
+  // var $navbar = $('.navbar');
+
+  // $(window).scroll(function(event){
+  //   var st = $(this).scrollTop();
+
+  //   if (st > lastScrollTop) { // scroll down
+      
+  //     // use this is jQuery full is used
+  //     //$navbar.fadeOut()
+      
+  //     // use this to use CSS3 animation
+  //     //$navbar.addClass("navbar-hide");
+  //     $navbar.removeClass("fade-in");
+  //   } else { // scroll up
+      
+  //     // use this is jQuery full is used
+  //     $navbar.fadeIn()
+      
+  //     // use this to use CSS3 animation
+  //     //$navbar.addClass("fade-in");
+  //     $navbar.removeClass("navbar-hide");
+  //   }
+  //   lastScrollTop = st;
+  // });
+
 });

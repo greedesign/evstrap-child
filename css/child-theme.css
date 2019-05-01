@@ -9184,6 +9184,11 @@ a.skip-link {
 .gallery-caption {
   display: block; }
 
+.body {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: auto; }
+
 /**
  * Content Block layout 
  */
