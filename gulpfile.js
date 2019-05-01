@@ -143,9 +143,11 @@ gulp.task( 'scripts', function() {
 
         paths.dev + '/js/skip-link-focus-fix.js',
 
-        // Adding currently empty javascript file to add on for your own themes´ customizations
+        // Add Understrap parent theme javascript
+        paths.dev + '/js/custom-javascript.js',
+
         // Please add any customizations to this .js file only!
-        paths.dev + '/js/custom-javascript.js'
+        paths.dev + '/js/custom-javascript-child.js'
     ];
   gulp.src( scripts )
     .pipe( concat( 'child-theme.min.js' ) )

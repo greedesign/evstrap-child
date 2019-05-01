@@ -7,10 +7,13 @@ function understrap_child_load_fonts() {
     <script>
     WebFont.load({
         google: {
-            families: ['Roboto Slab:700']
+            families: ['Roboto', 'Roboto Slab:700']
         },
         custom: {
             families: ['DroneRanger']
+        },
+        custom: {
+            families: ['Bebus Neue']
         }
     });
     </script>

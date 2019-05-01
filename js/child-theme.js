@@ -7112,42 +7112,64 @@ jQuery( document ).ready(function($) {
     "tolerance": 5
   });
 
-  // Hide Navbar on scroll down
-  // $(window).scroll(function(e) {
-  //     // add/remove class to navbar when scrolling to hide/show
-  //     var scroll = $(window).scrollTop();
-  //     if (scroll >= 150) {
-  //         $('.navbar').addClass("navbar-hide");
-  //     } else {
-  //         $('.navbar').removeClass("navbar-hide");
-  //     }
+});
+jQuery( document ).ready(function($) {
+    "use strict";
 
-  // });
 
-  // var lastScrollTop = 0;
-  // var $navbar = $('.navbar');
+    if(jQuery().vimeo_player) {
+        var myPlayer;
+        $(function () {
+        myPlayer = $("#bgVideo").vimeo_player({
+            mobileFallbackImage:"https://i.vimeocdn.com/video/736040370.jpg",
+            onReady: function(player){}
+        });
+        myPlayer.on("VPStart VPFallback", function(e){
+            $("#loader").fadeOut(1000);
+        }).on("VPReady", function(e){
+            //$('.entry-header').addClass('header-background-video');
+            if(!e.opt.autoPlay)
+            $("#loader").hide();
+        });
+        });
+    }
+  
+    /* Final Event Function */
+    var waitForFinalEvent = (function () {
+      var timers = {};
+      return function (callback, ms, uniqueId) {
+        if (!uniqueId) {
+          uniqueId = "Don't call this twice without a uniqueId";
+        }
+        if (timers[uniqueId]) {
+          clearTimeout (timers[uniqueId]);
+        }
+        timers[uniqueId] = setTimeout(callback, ms);
+      };
+    })();
+  
+    if(jQuery().TimeCircles) {
+        $(".countdown-timer").TimeCircles({
+            circle_bg_color: "#fff",
+            time: {
+            Days: { color: "#ffffff" }, //AF1319
+            Hours: { color: "#ffffff" },
+            Minutes: { color: "#ffffff" }/*,
+            Seconds: { show: false }*/
+            },
+            use_background: false,
+            bg_width: 0,
+            fg_width: 0.02,
+            count_past_zero: false,
+        });
 
-  // $(window).scroll(function(event){
-  //   var st = $(this).scrollTop();
-
-  //   if (st > lastScrollTop) { // scroll down
-      
-  //     // use this is jQuery full is used
-  //     //$navbar.fadeOut()
-      
-  //     // use this to use CSS3 animation
-  //     //$navbar.addClass("navbar-hide");
-  //     $navbar.removeClass("fade-in");
-  //   } else { // scroll up
-      
-  //     // use this is jQuery full is used
-  //     $navbar.fadeIn()
-      
-  //     // use this to use CSS3 animation
-  //     //$navbar.addClass("fade-in");
-  //     $navbar.removeClass("navbar-hide");
-  //   }
-  //   lastScrollTop = st;
-  // });
+            // fire on resize
+            $(window).resize(function () {
+            waitForFinalEvent(function(){
+                // code to fire after resize is done
+                $(".countdown-timer").TimeCircles().rebuild();
+            }, 250, "mobile");
+            });
+    }
 
 });
