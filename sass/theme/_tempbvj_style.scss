@@ -173,8 +173,9 @@ body.navbar-is-fixed-top.admin-bar .fixed-top:not(.headroom--not-top) {
   }
 }
 
+// padding for fixed header 
 body.navbar-is-fixed-top:not(.page-custom-header) #page {
-	padding-top: 59px;
+	padding-top: 63px;
 }
 
 .navbar .container {
@@ -223,6 +224,7 @@ body.navbar-is-fixed-top:not(.page-custom-header) #page {
 .navbar-social--toggle {
   padding: 0;
   line-height: 1;
+  box-shadow: none;
 }
 
 #main-menu li {
@@ -279,10 +281,6 @@ body.navbar-is-fixed-top:not(.page-custom-header) #page {
   background: transparent;
   text-decoration: none;
   svg { color: #fff; }
-}
-
-.navbar-social--toggle {
-
 }
 
 @media (min-width: 992px) {
@@ -384,15 +382,18 @@ body.navbar-is-fixed-top:not(.page-custom-header) #page {
 .bvj-flyout-header {
   margin: -76px -30px 20px -30px;
 }
+
+.bne-flyout-wrapper .sidr.right .bvj-flyout-header ,
+.bne-flyout-wrapper .sidr.right .bvj-flyout-footer { display: none; }
+
 .bvj-flyout-footer {
-  
+
   @media (max-width: 768px) {
     margin-left: -30px;
     margin-right: -30px;
   }
 
   @media (min-width: 769px) {
-    
     padding: 0 5rem;
   }
   .flyout-close-button {
@@ -453,6 +454,11 @@ body.navbar-is-fixed-top:not(.page-custom-header) #page {
 }
 
 .entry-header {
+
+  &.header-default .entry-title {
+    margin-top: 1.5rem;
+  }
+
   &.header-background-cover {
     text-shadow: 0 3px 4px rgba(1,36,56,.85);
     .btn {
@@ -606,9 +612,23 @@ body.navbar-is-fixed-top:not(.page-custom-header) #page {
   .card--access { border-top-color: #F28BB8 !important; }
 
 
+
+/**
+ * Posts
+ */
+.entry-meta,
+.post-navigation {
+  .single-artist &,
+  .single-activity & {
+    @include sr-only;
+  }
+}
+
+
+
 /**
  * Pages
- * 
+ *
  */
 
 // Homepage
@@ -1149,9 +1169,16 @@ h1.title--tickets-on-sale {
 }
 
 
+// Blog / News Index
+.blog article.post { }
 
 
+// Single Blog / News Post
+.single-post #single-wrapper article.post { }
 
+.single-post #single-wrapper article.post .entry-meta {
+  margin-bottom: 1.5rem;
+}
 
 /**
  * Utilities
