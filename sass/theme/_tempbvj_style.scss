@@ -18,6 +18,13 @@
     font-style: normal;
 }
 
+html {
+  font-size: 14px;
+  @media (min-width: 768px) {
+    font-size:16px;
+  }
+}
+
 body.home .entry-title {
 	@include sr-only;
 }
@@ -65,6 +72,70 @@ p {
   margin-bottom: $spacer * 1.75;
 }
 
+
+
+/**
+ * Buttons
+ */
+.btn {
+  text-decoration: none;
+  &.btn-link {
+    font-weight: bold;
+  }
+}
+.btn:not(.btn-link) {
+  //padding: .35rem .75rem .25rem;
+  //font-size: 1.2rem;
+  //@include font-size(1.2rem);
+  letter-spacing: 0.2rem;
+  font-family: 'BebasNeue','Arial Narrow',Arial,sans-serif;
+}
+.btn > * { color: inherit; }
+.btn { box-shadow: 0 .5rem 1rem rgba(0,0,0,.15); }
+
+.uagb-columns__background-image {
+  [class*="display"] { text-shadow: 0 .5rem 1rem rgba(0,0,0,.15); }
+  
+}
+
+
+/** Red Fabric **/
+.btn-fabric--red {
+  position: relative;
+  background-color: #d2232a;
+  border: 1px solid #88282c;
+  background-image: -moz-linear-gradient(top, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 67%, rgba(0,0,0,0) 81%, rgba(0,0,0,0.4) 100%);
+  background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.5) 0%,rgba(0,0,0,0) 67%,rgba(0,0,0,0) 81%,rgba(0,0,0,0.4) 100%);
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%,rgba(0,0,0,0) 67%,rgba(0,0,0,0) 81%,rgba(0,0,0,0.4) 100%);
+  color: #fff;
+  text-shadow: -1px -1px 0 rgba(0,0,0,0.3);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#80000000', endColorstr='#66000000',GradientType=0 );
+  border-radius: 0;
+  //font-size: 30px;
+  //@include font-size(1.3rem);
+}
+
+  .btn-fabric--red::before {
+    content:"";
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    bottom: 3px;
+    left: 3px;
+    border: 1px dashed rgba(288,215,72,0.8);
+    z-index: 0;
+  }
+
+  .btn-fabric--red:focus {
+    color: #fff;
+  }
+
+  .btn-fabric--red:hover {
+    background-color: #B81F25;
+    color: #fff;
+    text-decoration: none;
+  }
+
 /**
  * Main Menu
  */
@@ -72,16 +143,16 @@ p {
 // hack fix until we move the below selector into parent understrap theme
 body.navbar-is-fixed-top.admin-bar .fixed-top.headroom--not-top {
   top: 0;
-  @media (min-width: 768px) {
+  @media (min-width: 769px) {
     top: 32px;
   }
 }
 
-body.navbar-is-fixed-top.admin-bar .fixed-top.headroom--not-top
+//body.navbar-is-fixed-top.admin-bar .fixed-top.headroom--not-top
 
 body.navbar-is-fixed-top.admin-bar .fixed-top:not(.headroom--not-top) {
   top: 46px;
-  @media (min-width: 768px) {
+  @media (min-width: 769px) {
     top: 32px;
   }
 }
@@ -96,11 +167,12 @@ body.navbar-is-fixed-top:not(.page-custom-header) #page {
   }
 }
 
+
 .headroom:not(.headroom--top):not(.headroom--bottom).headroom--pinned .navbar.bg-transparent,
 .navbar-is-fixed-top:not(.page-custom-header) .headroom .navbar.bg-transparent {
   background-color: rgba(255,255,255,0) !important;
   border-color: #062536;
-  background-image: url(/wp-content/uploads/2019/04/navbar-bg-denim.jpg);
+  background-image: url(/wp-content/uploads/2019/04/bg-denim.jpg);
   background-repeat: repeat-x;
   background-position: center top;
   box-shadow: rgba(0,0,0,0.3) 0 2px 4px;
@@ -110,26 +182,63 @@ body.navbar-is-fixed-top:not(.page-custom-header) #page {
   }
 }
 
-.navbar .navbar-nav .nav-link,
-.navbar .btn {
+.navbar .navbar-nav .nav-link {
 	font-family: 'BebasNeue', 'Arial Narrow', Arial, sans-serif;
 	text-transform: uppercase;
-	color: rgba(255,255,255,0.9);
   @include font-size(1.3rem);
   letter-spacing: 0.075rem;
 }
 
-.headroom--top .navbar-buy-tickets {
-  padding: 0px 16px;
-  //font-size: 1.75rem;
-  @include font-size(1.75rem);
+.navbar .navbar-nav .nav-link,
+.navbar .btn-link {
+  color: rgba(255,255,255,0.9);
+  @media (max-width: 400px) {
+    padding-bottom: 0;
+  }
+}
+
+.navbar .navbar-buy-tickets {
+  padding: .4rem 1rem .6rem;
+  line-height: 1;
+  font-family: 'DroneRanger', Impact, 'Arial Narrow', serif;
+  letter-spacing: 0;
+}
+
+.navbar-social--toggle {
+  padding: 0;
+  line-height: 1;
+}
+
+#main-menu li {
+  @media (max-width: 719px) {
+    flex: 0 0 auto;
+  }
+}
+
+
+/**
+ * Navbar Features Content
+ */
+.navbar-features {
+  @media (max-width: 400px) {
+    display: none !important;
+  }
 }
 
 /**
  * Social Icons
  */
 .navbar-social {
-  margin: 0 1rem 0 0;
+  @media (min-width: 769px) {
+    margin: 0 1rem 0 0;
+  }
+  @media (max-width: 768px) {
+    .navbar & {
+      position: absolute;
+      top: 100%;
+      text-align: center;
+    }
+  }
 }
 .navbar-social li a {
   display: block;
@@ -156,6 +265,10 @@ body.navbar-is-fixed-top:not(.page-custom-header) #page {
   svg { color: #fff; }
 }
 
+.navbar-social--toggle {
+
+}
+
 @media (min-width: 992px) {
   .navbar-social::before {
     content: "";
@@ -169,7 +282,7 @@ body.navbar-is-fixed-top:not(.page-custom-header) #page {
     width: 35px;
     height: 35px;
     //font-size: 1.5em;
-    @include font-size(1.5rem);
+    @include font-size(1.25rem);
     line-height: 35px;
   }
 }
@@ -185,10 +298,14 @@ body.navbar-is-fixed-top:not(.page-custom-header) #page {
 #flyout-content-id-1820 {
 
   .flyout-content {
-    height: auto;
+    //height: auto;
   }
   .bne-flyout-wrapper .sidr.top {
     overflow-y: auto;
+  }
+
+  .bne-flyout-wrapper .sidr.right {
+    .bvj-flyout-header { display: none; }
   }
 
   .flyout-bg-gradient {
@@ -212,31 +329,10 @@ body.navbar-is-fixed-top:not(.page-custom-header) #page {
     position: relative;
     z-index: 1;
   }
-  .bvj-flyout-header {
-    margin: -76px -30px 20px -30px;
-  }
-  .bvj-flyout-footer {
-    
-  }
   .navbar-brand {
-    background-color: #D2232A;
+    background-color: $primary;
     padding: 0.5rem;
   }
-}
-
-
-
-// add spacing and enlarge pane closing toggle
-.flyout-close-button {
-  &::after {
-    content: "CLOSE";
-    vertical-align: inherit;
-  }
-  padding: 1rem;
-}
-.flyout-close-button svg.bne-icon-svg {
-  width: 2rem;
-  height: 2rem;
 }
 
 // Main menu pane layout
@@ -260,7 +356,7 @@ body.navbar-is-fixed-top:not(.page-custom-header) #page {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 769px) {
   .flyout-menu {
     padding: 5rem 0 5rem 5rem;
   }
@@ -269,7 +365,46 @@ body.navbar-is-fixed-top:not(.page-custom-header) #page {
   }
 }
 
+.bvj-flyout-header {
+  margin: -76px -30px 20px -30px;
+}
+.bvj-flyout-footer {
+  
+  @media (max-width: 768px) {
+    margin-left: -30px;
+    margin-right: -30px;
+  }
 
+  @media (min-width: 769px) {
+    
+    padding: 0 5rem;
+  }
+  .flyout-close-button {
+    text-align: center;
+    float: none;
+    @media (min-width: 769px) {
+      margin: 2rem 0;
+    }
+  }
+}
+
+// add spacing and enlarge flayout closing toggle
+.flyout-edit-button,
+.flyout-close-button {
+  padding: 1rem;
+}
+.flyout-close-button {
+  &::after {
+    content: "CLOSE";
+    vertical-align: inherit;
+  }
+}
+.bne-flyout-wrapper svg.bne-icon-svg {
+  width: 2rem;
+  height: 2rem;
+}
+
+// Flyout Menu Styles
 .flyout-menu li a {
   font-family: "Roboto Slab",Palatino,serif;
   @include font-size(1.5rem);
@@ -279,6 +414,7 @@ body.navbar-is-fixed-top:not(.page-custom-header) #page {
   color: $primary;
 }
 
+// Flyout Content
 .flyout-content-body .widget_recent_entries {
   font-family: "Roboto Slab",Palatino,serif;
 }
@@ -290,62 +426,6 @@ body.navbar-is-fixed-top:not(.page-custom-header) #page {
   @include font-size(1.5rem);
   border-bottom: 1px solid rgba(255,255,255,0.5);
 }
-
-
-/**
- * Buttons
- */
-.btn {
-  text-decoration: none;
-  &.btn-link {
-    font-weight: bold;
-  }
-}
-.btn:not(.btn-link) {
-  padding: .35rem .75rem .25rem;
-  //font-size: 1.2rem;
-  @include font-size(1.2rem);
-  letter-spacing: 0.4rem;
-  font-family: 'BebasNeue','Arial Narrow',Arial,sans-serif;
-}
-.btn > * { color: inherit; }
-
-/** Red Fabric **/
-.btn-fabric--red {
-  position: relative;
-  background-color: #d2232a;
-  border: 1px solid #88282c;
-  background-image: -moz-linear-gradient(top, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 67%, rgba(0,0,0,0) 81%, rgba(0,0,0,0.4) 100%);
-  background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.5) 0%,rgba(0,0,0,0) 67%,rgba(0,0,0,0) 81%,rgba(0,0,0,0.4) 100%);
-  background-image: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%,rgba(0,0,0,0) 67%,rgba(0,0,0,0) 81%,rgba(0,0,0,0.4) 100%);
-  color: #fff;
-  text-shadow: -1px -1px 0 rgba(0,0,0,0.3);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#80000000', endColorstr='#66000000',GradientType=0 );
-  border-radius: 0;
-  //font-size: 30px;
-  @include font-size(1.3rem);
-}
-
-  .btn-fabric--red::before {
-    content:"";
-    position: absolute;
-    top: 3px;
-    right: 3px;
-    bottom: 3px;
-    left: 3px;
-    border: 1px dashed rgba(288,215,72,0.8);
-    z-index: 0;
-  }
-
-  .btn-fabric--red:focus {
-    color: #fff;
-  }
-
-  .btn-fabric--red:hover {
-    background-color: #B81F25;
-    color: #fff;
-    text-decoration: none;
-  }
 
 
 /**
@@ -383,7 +463,9 @@ body.navbar-is-fixed-top:not(.page-custom-header) #page {
 }
 
 .entry-header--internal-links .btn-link {
-	color: inherit;
+  padding: .25rem .50rem;
+  color: inherit;
+  @include font-size(1rem);
 }
 
 /**
@@ -469,21 +551,51 @@ body.navbar-is-fixed-top:not(.page-custom-header) #page {
  * Components
  */
 
+  // Ticket Types
+  .ticket-types-list .nav-link {
+    max-width: 23em;
+    color: #012438;
+    text-decoration: none;
+  }
+  .ticket-types-list .nav-item + .nav-item .nav-link {
+    border-top: 1px solid #ddd;
+  }
+
+  .ticket-types-list .nav-link h4 { margin-bottom: 0; }
+
+  .ticket-types-list span.fa,
+  .ticket-types-list svg.svg-inline--fa { float: right; }
+
+  // Ultimate FAQ's
   .ufaq-permalink,
   .ufaq-back-to-top { display: inline-block; }
   .ufaq-back-to-top { text-decoration: underline; }
   .ewd-ufaq-faqs .ufaq-permalink { margin-right: 0.75rem;  }
 
- .ufaq-faq-display-style-Contemporary {
+  .ufaq-faq-display-style-Contemporary {}
 
- }
+  // Camping Cards
+  .card--country-nation,
+  .card--heartland,
+  .card--legends,
+  .card--legacy,
+  .card--cadillac-ranch,
+  .card--access { border-top-width: 4px !important; }
+
+  .card--country-nation { border-top-color: #F7C322 !important; }
+  .card--heartland { border-top-color: #12B5DB !important; }
+  .card--legends { border-top-color: #F28BB8 !important; }
+  .card--legacy { border-top-color: #EF8821 !important; }
+  .card--cadillac-ranch { border-top-color: #E84982 !important; }
+  .card--access { border-top-color: #F28BB8 !important; }
+
 
 /**
  * Pages
  * 
  */
 
-
+// Homepage
 .header-background-video {
   padding: 0 !important;
 }
@@ -518,8 +630,6 @@ body.navbar-is-fixed-top:not(.page-custom-header) #page {
 
   #bgVideoWrapper,
   .bgvideo {
-    //position: fixed;
-    //width: 100%;
     height: 90vh;
   }
 
@@ -652,8 +762,6 @@ body.navbar-is-fixed-top:not(.page-custom-header) #page {
 
 .home-header--countdown h2 {
   font-family: 'DroneRanger';
-  //font-size: 22px;
-  //@include font-size(1.2rem);
   @include font-size(1.875rem);
 }
 
@@ -726,7 +834,7 @@ body.navbar-is-fixed-top:not(.page-custom-header) #page {
     padding: 60px 0;
   }
 
-  .home-header--date-wrap{
+  .home-header--date-wrap {
     float: left;
     width: 40%;
     margin-bottom: 0;
@@ -736,14 +844,12 @@ body.navbar-is-fixed-top:not(.page-custom-header) #page {
   }
 
   .home-header--date .place,
-  .home-header--date .time {
-  }
+  .home-header--date .time {}
 
     .home-header--countdown {
       padding-bottom: 15px;
     }
-    .home-header--countdown h2 {
-    }
+    .home-header--countdown h2 {}
 
   .home-header--tagline {
     float: right;
@@ -776,8 +882,7 @@ body.navbar-is-fixed-top:not(.page-custom-header) #page {
   .home-header--date .date {
   }
   .home-header--date .place,
-  .home-header--date .time {
-  }
+  .home-header--date .time {}
 }
 
 
@@ -882,8 +987,6 @@ body.navbar-is-fixed-top:not(.page-custom-header) #page {
   top: 100%;
   width: 100%;
   color: #fff;
-  //font-size: 25px !important;
-  //font-size: 1rem !important;
   @include font-size(0.8rem, true);
 }
 
@@ -909,8 +1012,7 @@ body.navbar-is-fixed-top:not(.page-custom-header) #page {
 }
 
 @media (min-width: 992px) {
-  .time_circles > div > span {
-  }
+  .time_circles > div > span {}
 }
 
 
@@ -963,7 +1065,7 @@ h1.title--tickets-on-sale {
 .home-header--actions .btn {
   min-width: 55%;
   margin: 10px 0;
-  @include font-size(1.5rem);
+  //@include font-size(1.5rem);
   border-width: 2px;
   font-family: 'BebasNeue', san-serif;
 }
@@ -1010,7 +1112,6 @@ h1.title--tickets-on-sale {
       min-width: auto;
       margin: 0 15px;
       padding: 6px 20px;
-      //font-size: 30px;
     }
 
 }
