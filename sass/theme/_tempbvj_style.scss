@@ -142,10 +142,10 @@ p {
   margin-right : calc( -100vw / 2 + 100% / 2 );
   max-width    : 100vw;
 }
-@media (min-width: $container-max-widths[xl] + $align_wide_width ) {
+@media (min-width: map-get($container-max-widths, xl) + $align_wide_width ) {
   .uagb-columns__wrap.alignwide {
-    margin-left  : -80px;
-    margin-right : -80px;
+    margin-left  : -$align_wide_width;
+    margin-right : -$align_wide_width;
     width: auto;
   }
 }
