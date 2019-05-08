@@ -50,7 +50,7 @@
     "merge2": "^1.2.1",
     "popper.js": "^1.14.7",
     "run-sequence": "^2.2.1",
-    "understrap": "git://github.com/greedesign/understrap.git",
+    "understrap": "git+https://github.com/greedesign/understrap.git",
     "undescores-for-npm": "^1.0.0"
   }
 }
