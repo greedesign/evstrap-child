@@ -1,0 +1,22 @@
+/**
+ * Page Styles
+ *
+ */
+#full-width-page-wrapper {
+
+}
+
+/**
+ * Page article header
+ */
+.entry-header {
+  &.header-background-cover {}
+}
+.entry-header--internal-links {}
+
+/**
+ * Page article footer
+ */
+.page {
+  .entry-footer {}   
+}

@@ -1,0 +1,66 @@
+/**
+ * Content Block layout 
+ */
+
+// fix for horizontal scroll
+.site {
+}
+
+.wp-block-video video {
+
+}
+
+.wp-block-gallery:not(.components-placeholder) {
+
+}
+
+.wp-block-cover-text p {
+
+}
+
+ul.wp-block-latest-posts.alignwide,
+ul.wp-block-latest-posts.alignfull,
+ul.wp-block-latest-posts.is-grid.alignwide,
+ul.wp-block-latest-posts.is-grid.alignwide {
+
+}
+
+.wp-block-table {
+
+}
+
+.wp-block-table table {
+
+}
+
+.wp-block-table td, .wp-block-table th {
+
+}
+
+
+.wp-block-embed.type-video > .wp-block-embed__wrapper {
+
+}
+
+.wp-block-embed.type-video > .wp-block-embed__wrapper > iframe {
+
+}
+
+.wp-block-quote.is-large {
+
+}
+
+.wp-block-pullquote>p:first-child {
+
+}
+
+.wp-block-separator {
+
+}
+
+@media screen and (min-width: 768px) {
+  .wp-block-cover-text p {
+    // padding: 1.5em 0;
+  }
+
+}

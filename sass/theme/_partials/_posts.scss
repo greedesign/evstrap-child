@@ -1,0 +1,20 @@
+.post {
+    // Post Header
+    // will apply to single posts and and archive listings by default
+    .entry-header {
+        .entry-meta {}
+        .posted-on {}
+        .byline {}
+    }
+
+    // Post Footer
+    .entry-footer {}
+    .cat-links {}
+    .comments-link {}
+}
+
+// Post Navigation
+.post-navigation {
+    .nav-next {}
+    .nav-previous {}
+}

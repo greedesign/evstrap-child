@@ -1,0 +1,62 @@
+/**
+ * Fixed navbar spacing on <body> when logged in
+ */
+body.navbar-is-fixed-top.admin-bar .fixed-top {
+}
+
+@include media-breakpoint-up(md) {
+  body.navbar-is-fixed-top.admin-bar .fixed-top {
+  }
+}
+
+// add top margin to to #site wrapper
+body.navbar-is-fixed-top:not(.page-custom-header) #page {
+}
+
+
+/**
+ * Logo
+ */
+.img-fluid.custom-logo {
+}
+
+.navbar-brand.custom-logo-link { 
+}
+
+
+/**
+ * Navbar nav-link styles
+ * * if planning on having more than one navbar element in the site,
+ * * these default styles should be duplicated and one of them should
+ * * scoped specificlly to the #main-menu
+ * 
+ */
+// All nabvar <a> */
+.navbar-nav .nav-link {
+}
+// navbar 1st level <a> 
+.navbar-nav > li > .nav-link {}
+// navbar dropdown items <a>
+.dropdown-item {}
+
+
+.navbar-dark .ev-navbar-region a:not(.btn) {
+
+}
+.navbar-light .ev-navbar-region a:not(.btn) {
+
+} 
+
+  // Navbar: if TransparentBackground ensure has background when pinned state
+  .headroom .navbar {
+    will-change: all;
+    transition: all 200ms linear;
+  }
+
+  .headroom:not(.headroom--top):not(.headroom--bottom) {
+    &.headroom--pinned .navbar.bg-transparent {
+      .nav-link:not(.btn),
+      .ev-navbar-region a:not(.btn) {
+      }
+    }
+  }
