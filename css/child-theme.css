@@ -10286,7 +10286,7 @@ a.skip-link {
 .gallery-caption {
   display: block; }
 
-.body {
+body {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   text-rendering: auto; }
@@ -10448,6 +10448,16 @@ body.navbar-is-fixed-top:not(.page-custom-header) #page {
 .entry-header.justify-content-center {
   text-align: center; }
 
+.post-navigation {
+  margin-top: 1.5rem; }
+  .post-navigation .nav-next:first-child {
+    margin-left: 0; }
+
+/**
+ * Child Theme styles
+ * 
+ * Uncomment to include partials and add styles accordingly
+ */
 /*
 * Use existing Bootstrap 4 classes and
 * variables to extend - override CF7 style

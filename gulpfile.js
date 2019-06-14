@@ -16,8 +16,6 @@ var cleanCSS = require( 'gulp-clean-css' );
 var replace = require( 'gulp-replace' );
 var autoprefixer = require( 'gulp-autoprefixer' );
 
-var gulpSequence = require( 'gulp-sequence' );
-
 // Configuration file to keep your code DRY
 var cfg = require( './gulpconfig.json' );
 var paths = cfg.paths;
@@ -111,10 +109,6 @@ gulp.task( 'cleancss', function() {
 
 gulp.task( 'styles', gulp.series( 'sass', 'minifycss' ));
 
-// gulp.task( 'styles', function( callback ) {
-//     gulpSequence( 'sass', 'minifycss' )( callback );
-// } );
-
 // Run:
 // gulp browser-sync
 // Starts browser-sync task for starting the server.
@@ -149,15 +143,15 @@ gulp.task( 'scripts', function() {
   return gulp.src( scripts, { allowEmpty: true } )
     .pipe( concat( 'child-theme.js' ) )
     .pipe( gulp.dest( paths.js ) );
-
-
 });
 
 gulp.task( 'adminscripts', function() {
   var admin_scripts = [
 
-      // Start - All BS4 stuff
+      // Add admin JS from evStrap parent theme
       `${paths.dev}/js/admin.js`,
+
+      // Add admin JS from this child theme
       `${paths.dev}/js/admin-child.js`,
 
   ];
@@ -174,12 +168,12 @@ gulp.task( 'adminscripts', function() {
 // Run:
 // gulp watch-bs
 // Starts watcher with browser-sync. Browser-sync reloads page automatically on your browser
-gulp.task( 'watch-bs', gulp.parallel('browser-sync', 'watch', 'scripts'));
+gulp.task( 'watch-bs', gulp.parallel('browser-sync', 'watch', 'scripts', 'adminscripts'));
 
 
 // Deleting any file inside the /src folder
 gulp.task('clean-source', function () {
-  return del(['src/**/*',]);
+  return del(['src/**/*']);
 });
 
 // Run:

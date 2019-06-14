@@ -1,9 +1,11 @@
 {
   "name": "evstrap-child",
-  "version": "0.5.5",
+  "version": "0.6.0",
   "description": "Basic Child Theme for evStrap",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "postinstall": "gulp copy-assets"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/greedesign/evstrap-child.git"
@@ -15,18 +17,17 @@
     "bootstrap",
     "underscores"
   ],
-  "author": "Holger Koenemann",
+  "author": "ev+ AGENCY",
   "license": "GPL-2.0",
   "bugs": {
     "url": "https://github.com/greedesign/evstrap-child/issues"
   },
-  "homepage": "",
+  "homepage": "https://www.evhq.ca",
   "dependencies": {
     "@babel/preset-env": "^7.4.5",
     "bootstrap": "^4.3.1",
-    "browser-sync": "^2.23.6",
+    "browser-sync": "^2.26.6",
     "del": "^4.1.0",
-    "evstrap": "git+https://github.com/greedesign/evstrap.git",
     "font-awesome": "^4.7.0",
     "gulp": "^4.0.0",
     "gulp-autoprefixer": "^6.0.0",
@@ -50,6 +51,7 @@
     "merge2": "^1.2.3",
     "popper.js": "^1.15.0",
     "run-sequence": "^2.2.1",
+    "evstrap": "git@github.com:greedesign/evstrap.git",
     "undescores-for-npm": "^1.0.0"
   },
   "devDependencies": {
