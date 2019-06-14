@@ -7099,7 +7099,7 @@
 }(window.Zepto || window.jQuery));
 
 /**
- * UNDERSTRAP THEME Code
+ * EVSTRAP THEME Code
  */
 
 jQuery( document ).ready(function($) {
