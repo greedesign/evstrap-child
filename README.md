@@ -1,34 +1,34 @@
-# understrap-child
-Basic Child Theme for UnderStrap Theme Framework: https://github.com/understrap/understrap
+# evstrap-child
+Basic Child Theme for evStrap Theme Framework: https://github.com/greedesign/evstrap
 
 ## How it works
-Understrap Child Theme shares with the parent theme all PHP files and adds its own functions.php on top of the UnderStrap parent theme's functions.php.
+evStrap Child Theme shares with the parent theme all PHP files and adds its own functions.php on top of the evStrap parent theme's functions.php.
 
-**IT DOES NOT LOAD THE PARENT THEMES CSS FILE(S)!** Instead it uses the UnderStrap Parent Theme as a dependency via npm and compiles its own CSS file from it.
+**IT DOES NOT LOAD THE PARENT THEMES CSS FILE(S)!** Instead it uses the evStrap Parent Theme as a dependency via npm and compiles its own CSS file from it.
 
-Understrap Child Theme uses the Enqueue method to load and sort the CSS file the right way instead of the old @import method.
+evStrap Child Theme uses the Enqueue method to load and sort the CSS file the right way instead of the old @import method.
 
 ## Installation
-1. Install the parent theme UnderStrap first: `https://github.com/understrap/understrap`
-   - IMPORTANT: If you download UnderStrap from GitHub make sure you rename the "understrap-master.zip" file to "understrap.zip" or you might have problems using this child theme!
-1. Upload the understrap-child folder to your wp-content/themes directory
+1. Install the parent theme evStrap first: `https://github.com/greedesign/evstrap`
+   - IMPORTANT: If you download evStrap from GitHub make sure you rename the "evstrap-master.zip" file to "evstrap.zip" or you might have problems using this child theme!
+1. Upload the evstrap-child folder to your wp-content/themes directory
 1. Go into your WP admin backend 
 1. Go to "Appearance -> Themes"
-1. Activate the UnderStrap Child theme
+1. Activate the evStrap Child theme
 
 ## Editing
 Add your own CSS styles to `/sass/theme/_child_theme.scss`
-or import you own files into `/sass/theme/understrap-child.scss`
+or import you own files into `/sass/theme/evstrap-child.scss`
 
-To overwrite Bootstrap's or UnderStrap's base variables just add your own value to:
+To overwrite Bootstrap's or evStrap's base variables just add your own value to:
 `/sass/theme/_child_theme_variables.scss`
 
-For example, the "$brand-primary" variable is used by both Bootstrap and UnderStrap.
+For example, the "$brand-primary" variable is used by both Bootstrap and evStrap.
 
 Add your own color like: `$brand-primary: #ff6600;` in `/sass/theme/_child_theme_variables.scss` to overwrite it. This change will automatically apply to all elements that use the $brand-primary variable.
 
 It will be outputted into:
-`/css/understrap-child.min.css` and `/css/understrap-child.css`
+`/css/evstrap-child.min.css` and `/css/evstrap-child.css`
 
 So you have one clean CSS file at the end and just one request.
 
@@ -36,7 +36,7 @@ So you have one clean CSS file at the end and just one request.
 
 ### Installing Dependencies
 - Make sure you have installed Node.js, Gulp, and Browser-Sync [1] on your computer globally
-- Open your terminal and browse to the location of your UnderStrap copy
+- Open your terminal and browse to the location of your evStrap copy
 - Run: `$ npm install` then: `$ gulp copy-assets`
 
 ### Running

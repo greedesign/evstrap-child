@@ -3,12 +3,10 @@
   "version": "0.5.5",
   "description": "Basic Child Theme for evStrap",
   "main": "index.js",
-  "scripts": {
-    "postinstall": "gulp copy-assets"
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
-    "url": "https://github.com/greedesign/understrap-child.git"
+    "url": "https://github.com/greedesign/evstrap-child.git"
   },
   "keywords": [
     "wordpress",
@@ -20,13 +18,15 @@
   "author": "Holger Koenemann",
   "license": "GPL-2.0",
   "bugs": {
-    "url": "https://github.com/greedesign/understrap-child/issues"
+    "url": "https://github.com/greedesign/evstrap-child/issues"
   },
-  "homepage": "https://understrap.com",
+  "homepage": "",
   "dependencies": {
+    "@babel/preset-env": "^7.4.5",
     "bootstrap": "^4.3.1",
     "browser-sync": "^2.23.6",
     "del": "^4.1.0",
+    "evstrap": "git+https://github.com/greedesign/evstrap.git",
     "font-awesome": "^4.7.0",
     "gulp": "^4.0.0",
     "gulp-autoprefixer": "^6.0.0",
@@ -50,7 +50,12 @@
     "merge2": "^1.2.3",
     "popper.js": "^1.15.0",
     "run-sequence": "^2.2.1",
-    "evstrap": "git+https://github.com/greedesign/understrap.git",
     "undescores-for-npm": "^1.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.4",
+    "autoprefixer": "^9.5.1",
+    "gulp-babel": "^8.0.0",
+    "gulp-postcss": "^8.0.0"
   }
 }

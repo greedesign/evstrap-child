@@ -1,8 +1,8 @@
 <?php
 /**
- * Understrap modify editor
+ * evStrap modify editor
  *
- * @package understrap
+ * @package evstrap
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -13,8 +13,8 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Set Child Theme Editor Colour Palette
  */
 
-if ( ! function_exists( 'understrap_child_setup_theme_supported_features' ) ) {
-	function understrap_child_setup_theme_supported_features() {
+if ( ! function_exists( 'evstrap_child_setup_theme_supported_features' ) ) {
+	function evstrap_child_setup_theme_supported_features() {
 		add_theme_support( 'editor-color-palette', array(
 				array(
 						'name' => __( 'strong magenta', 'themeLangDomain' ),
@@ -40,4 +40,4 @@ if ( ! function_exists( 'understrap_child_setup_theme_supported_features' ) ) {
 	}
 }
 
-add_action( 'after_setup_theme', 'understrap_child_setup_theme_supported_features' );
+add_action( 'after_setup_theme', 'evstrap_child_setup_theme_supported_features' );

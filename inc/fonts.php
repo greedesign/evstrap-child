@@ -1,7 +1,7 @@
 <?php
 
-add_action( 'wp_head', 'understrap_child_load_fonts' ); 
-function understrap_child_load_fonts() { 
+add_action( 'wp_head', 'evstrap_child_load_fonts' ); 
+function evstrap_child_load_fonts() { 
     ?>
     <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.10/webfont.js"></script>
     <script>

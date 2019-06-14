@@ -1,10 +1,10 @@
 {
-    "name": "greedesign/understrap-child",
-    "description": "Basic Child Theme for UnderStrap Theme Framework",
+    "name": "greedesign/evstrap-child",
+    "description": "Basic Child Theme for evStrap Theme Framework",
     "type": "library",
     "license": "GPL-2.0",
     "minimum-stability": "stable",
     "require": {},
     "keywords": ["wordpress","theme","bootstrap"],
-    "homepage": "https://github.com/greedesign/understrap-child"
+    "homepage": "https://github.com/greedesign/evstrap-child"
 }

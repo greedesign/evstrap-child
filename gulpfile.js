@@ -19,7 +19,7 @@ var autoprefixer = require( 'gulp-autoprefixer' );
 var gulpSequence = require( 'gulp-sequence' );
 
 // Configuration file to keep your code DRY
-var cfg = require( './gulpconfig.json.js' );
+var cfg = require( './gulpconfig.json' );
 var paths = cfg.paths;
 
 // Run:
@@ -135,7 +135,7 @@ gulp.task( 'scripts', function() {
 
       `${paths.dev}/js/skip-link-focus-fix.js`,
 
-      // Add Understrap parent theme javascript
+      // Add evStrap parent theme javascript
       `${paths.dev}/js/custom-javascript.js`,
 
       // Please add any customizations to this .js file only!
@@ -223,21 +223,21 @@ gulp.task( 'copy-assets', function() {
       gulp.src( `${paths.node}popper.js/dist/umd/popper.js` )
           .pipe( gulp.dest( `${paths.js}${paths.vendor}` ) );
 
-  // Copy Understrap JS files
-      gulp.src( `${paths.node}understrap/src/js/custom-javascript.js` )
+  // Copy evStrap JS files
+      gulp.src( `${paths.node}evstrap/src/js/custom-javascript.js` )
           .pipe( gulp.dest( `${paths.dev}/js` ) );
 
-  // UnderStrap SCSS files
-      gulp.src( `${paths.node}understrap/sass/**/*.scss` )
-          .pipe( gulp.dest( `${paths.dev}/sass/understrap` ) );
+  // evStrap SCSS files
+      gulp.src( `${paths.node}evstrap/sass/**/*.scss` )
+          .pipe( gulp.dest( `${paths.dev}/sass/evstrap` ) );
 
   // Copy Admin JS files
-      gulp.src( `${paths.node}understrap/src/js/admin.js` )
-          .pipe( gulp.dest( paths.js) );
+      gulp.src( `${paths.node}evstrap/src/js/admin.js` )
+          .pipe( gulp.dest( `${paths.js}${paths.vendor}` ) );
 
   // Copy Admin CSS files
-      gulp.src( `${paths.node}understrap/css/admin.css` )
-          .pipe( gulp.dest( paths.css ) );
+      gulp.src( `${paths.node}evstrap/css/admin.css` )
+          .pipe( gulp.dest( `${paths.css}${paths.vendor}` ) );
 
   return stream;
 
@@ -245,7 +245,7 @@ gulp.task( 'copy-assets', function() {
 
 // Deleting the files distributed by the copy-assets task
 gulp.task( 'clean-vendor-assets', function() {
-  return del( [`${paths.dev}/js/bootstrap4/**`, `${paths.dev}/sass/bootstrap4/**`, './fonts/*wesome*.{ttf,woff,woff2,eot,svg}', paths.dev + '/sass/fontawesome/**', paths.dev + '/sass/underscores/**', paths.dev + '/js/skip-link-focus-fix.js', paths.js + '/**/skip-link-focus-fix.js', paths.js + '/**/popper.min.js', paths.js + '/**/popper.js', ( paths.vendor !== ''?( paths.js + paths.vendor + '/**' ):'' )] );
+  return del( [`${paths.dev}/js/bootstrap4/**`, `${paths.dev}/sass/bootstrap4/**`, './fonts/*wesome*.{ttf,woff,woff2,eot,svg}', `${paths.dev}/sass/fontawesome/**`, `${paths.dev}/sass/underscores/**`, `${paths.dev}/js/skip-link-focus-fix.js`, `${paths.js}/**/skip-link-focus-fix.js`, `${paths.js}/**/popper.min.js`, `${paths.js}/**/popper.js`, ( paths.vendor !== ''?( `${paths.js}${paths.vendor}/**` ):'' )] );
 });
 
 // Deleting any file inside the /dist folder
@@ -256,25 +256,32 @@ gulp.task( 'clean-dist', function() {
 // Run
 // gulp dist
 // Copies the files to the /dist folder for distribution as simple theme
-gulp.task( 'dist', ['clean-dist'], function() {
-  return gulp.src( ['**/*', '!' + paths.bower, '!' + paths.bower + '/**', '!' + paths.node, '!' + paths.node + '/**', '!' + paths.dev, '!' + paths.dev + '/**', '!' + paths.dist, '!' + paths.dist + '/**', '!' + paths.distprod, '!' + paths.distprod + '/**', '!' + paths.sass, '!' + paths.sass + '/**', '!readme.txt', '!readme.md', '!package.json', '!package-lock.json', '!gulpfile.js', '!gulpconfig.json', '!CHANGELOG.md', '!.travis.yml', '!jshintignore',  '!codesniffer.ruleset.xml',  '*'], { 'buffer': false } )
-  .pipe( replace( '/js/jquery.slim.min.js', '/js' + paths.vendor + '/jquery.slim.min.js', { 'skipBinary': true } ) )
-  .pipe( replace( '/js/popper.min.js', '/js' + paths.vendor + '/popper.min.js', { 'skipBinary': true } ) )
-  .pipe( replace( '/js/skip-link-focus-fix.js', '/js' + paths.vendor + '/skip-link-focus-fix.js', { 'skipBinary': true } ) )
-    .pipe( gulp.dest( paths.dist ) );
-});
+gulp.task( 'dist', gulp.series('clean-dist', function copyToDistFolder() {
+  const ignorePaths = [`!${paths.bower}`, `!${paths.bower}/**`, `!${paths.node}`, `!${paths.node}/**`, `!${paths.dev}`, `!${paths.dev}/**`, `!${paths.dist}`, `!${paths.dist}/**`, `!${paths.distprod}`, `!${paths.distprod}/**`, `!${paths.sass}`, `!${paths.sass}/**`],
+  ignoreFiles = [ '!readme.txt', '!readme.md', '!package.json', '!package-lock.json', '!gulpfile.js', '!gulpconfig.json', '!CHANGELOG.md', '!.travis.yml', '!jshintignore',  '!codesniffer.ruleset.xml' ];
 
+  console.log({ ignorePaths, ignoreFiles })
+
+  return gulp.src( ['**/*', ...ignorePaths, ...ignoreFiles,  '*'], { 'buffer': false } )
+  .pipe( replace( '/js/jquery.slim.min.js', `/js${paths.vendor}/jquery.slim.min.js`, { 'skipBinary': true } ) )
+  .pipe( replace( '/js/popper.min.js', `/js${paths.vendor}/popper.min.js`, { 'skipBinary': true } ) )
+  .pipe( replace( '/js/skip-link-focus-fix.js', `/js${paths.vendor}/skip-link-focus-fix.js`, { 'skipBinary': true } ) )
+    .pipe( gulp.dest( paths.dist ) );
+}));
+
+// Deleting any file inside the /dist-product folder
+gulp.task( 'clean-dist-product', function() {
+  return del( [`${paths.distprod}/**`] );
+} );
 
 
 // Run
 // gulp dist-product
 // Copies the files to the /dist-prod folder for distribution as theme with all assets
-gulp.task( 'dist-product', ['clean-dist-product'], function() {
-  return gulp.src( ['**/*', '!' + paths.bower, '!' + paths.bower + '/**', '!' + paths.node, '!' + paths.node + '/**', '!' + paths.dist, '!' + paths.dist +'/**', '!' + paths.distprod, '!' + paths.distprod + '/**', '*'] )
+gulp.task( 'dist-product', gulp.series('clean-dist-product', function copyToDistFolder() {
+  return gulp.src( ['**/*', `!${paths.bower}`, `!${paths.bower}/**`, `!${paths.node}`, `!${paths.node}/**`, `!${paths.dist}`, `!${paths.dist}` +'/**', `!${paths.distprod}`, `!${paths.distprod}/**`, '*'] )
     .pipe( gulp.dest( paths.distprod ) );
-} );
+} ));
 
 // Deleting any file inside the /dist-product folder
-gulp.task( 'clean-dist-product', function() {
-  return del( [paths.distprod + '/**'] );
-} );
+gulp.task( 'compile', gulp.series( 'styles', 'scripts', 'adminscripts', 'dist' ));

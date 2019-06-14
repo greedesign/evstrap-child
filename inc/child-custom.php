@@ -1,8 +1,8 @@
 <?php
 /**
- * Understrap modify editor
+ * evStrap modify editor
  *
- * @package understrap
+ * @package evStrap
  */
 
 if ( ! defined( 'ABSPATH' ) ) {

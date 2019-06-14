@@ -23,7 +23,7 @@
 * $cyan:    #17a2b8 !default;
 */
 
-$primary:    #D2232A; //$blue !default;
+//$primary:    #D2232A; //$blue !default;
 //$secondary:  #6c757d; //$gray-600 !default;
 //$success:    #28a745  //$green !default;
 //$info:       #17a2b8  //$cyan !default;
@@ -55,7 +55,7 @@ $enable-deprecation-messages:                 true;
 //
 // Settings for the `<body>` element.
 //$body-bg:                   $white !default;
-$body-color:                  #012438;//$gray-900 !default;
+//$body-color:                  $gray-900 !default;
 
 
 // Links
@@ -109,7 +109,7 @@ $font-size-sm:                $font-size-base * .875 !default;
 //$headings-font-family:        null !default;
 //$headings-font-weight:        500 !default;
 //$headings-line-height:        1.2 !default;
-$headings-color:              null !default;
+//$headings-color:                null !default;
 
 // $display1-size:               6rem !default;
 // $display2-size:               5.5rem !default;
@@ -140,17 +140,17 @@ $lead-font-weight:              400;
 //$btn-padding-y:               $input-btn-padding-y !default;
 //$btn-padding-x:               $input-btn-padding-x !default;
 //$btn-font-family:             $input-btn-font-family !default;
-$btn-font-size:                 $font-size-base * 1.25;
+//$btn-font-size:                 $font-size-base * 1.25;
 //$btn-line-height:             $input-btn-line-height !default;
 
 //$btn-padding-y-sm:            $input-btn-padding-y-sm !default;
 //$btn-padding-x-sm:            $input-btn-padding-x-sm !default;
-$btn-font-size-sm:              $font-size-base;
+//$btn-font-size-sm:              $font-size-base;
 //$btn-line-height-sm:          $input-btn-line-height-sm !default;
 
 //$btn-padding-y-lg:            $input-btn-padding-y-lg !default;
 //$btn-padding-x-lg:            $input-btn-padding-x-lg !default;
-$btn-font-size-lg:              $font-size-base * 1.5;
+//$btn-font-size-lg:              $font-size-base * 1.5;
 //$btn-line-height-lg:          $input-btn-line-height-lg !default;
 
 
