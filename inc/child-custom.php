@@ -1,6 +1,6 @@
 <?php
 /**
- * evStrap modify editor
+ * evStrap custom functions go here
  *
  * @package evStrap
  */

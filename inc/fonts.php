@@ -10,9 +10,6 @@ function evstrap_child_load_fonts() {
             families: ['Roboto', 'Roboto Slab:700']
         },
         custom: {
-            families: ['DroneRanger']
-        },
-        custom: {
             families: ['Bebus Neue']
         }
     });
