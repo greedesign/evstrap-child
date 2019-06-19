@@ -28,6 +28,7 @@
     "bootstrap": "^4.3.1",
     "browser-sync": "^2.26.6",
     "del": "^4.1.0",
+    "evstrap": "git+https://git@github.com/greedesign/evstrap.git",
     "font-awesome": "^4.7.0",
     "gulp": "^4.0.0",
     "gulp-autoprefixer": "^6.0.0",
@@ -51,7 +52,6 @@
     "merge2": "^1.2.3",
     "popper.js": "^1.15.0",
     "run-sequence": "^2.2.1",
-    "evstrap": "git@github.com:greedesign/evstrap.git",
     "undescores-for-npm": "^1.0.0"
   },
   "devDependencies": {

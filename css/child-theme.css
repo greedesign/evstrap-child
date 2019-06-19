@@ -10291,6 +10291,14 @@ body {
   -webkit-font-smoothing: antialiased;
   text-rendering: auto; }
 
+h1 a, .h1 a,
+h2 a, .h2 a,
+h3 a, .h3 a,
+h4 a, .h4 a,
+h5 a, .h5 a,
+h6 a, .h6 a {
+  text-decoration: none; }
+
 /**
  * Content Block layout 
  */
