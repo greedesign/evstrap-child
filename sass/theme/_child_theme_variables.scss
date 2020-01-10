@@ -10,27 +10,28 @@
 // Color system
 //
 
-/**
-* $blue:    #007bff !default;
-* $indigo:  #6610f2 !default;
-* $purple:  #6f42c1 !default;
-* $pink:    #e83e8c !default;
-* $red:     #dc3545 !default;
-* $orange:  #fd7e14 !default;
-* $yellow:  #ffc107 !default;
-* $green:   #28a745 !default;
-* $teal:    #20c997 !default;
-* $cyan:    #17a2b8 !default;
-*/
+// Base Defaults
+// uncomment and change value to override
+// genertally can be left alone
+//
+// $blue:    #007bff !default;
+// $indigo:  #6610f2 !default;
+// $purple:  #6f42c1 !default;
+// $pink:    #e83e8c !default;
+// $red:     #dc3545 !default;
+// $orange:  #fd7e14 !default;
+// $yellow:  #ffc107 !default;
+// $green:   #28a745 !default;
+// $teal:    #20c997 !default;
+// $cyan:    #17a2b8 !default;
 
-//$primary:    #D2232A; //$blue !default;
-//$secondary:  #6c757d; //$gray-600 !default;
-//$success:    #28a745  //$green !default;
-//$info:       #17a2b8  //$cyan !default;
-//$warning:    #ffc107  //$yellow !default;
-//$danger:     #dc3545  //$red !default;
-//$light:      #f8f9fa  //$gray-100 !default;
-//$dark:       #343a40  //$gray-800 !default;
+// Modify or Add new $theme-colors
+// To modify an existing color in our $theme-colors map, uncomment and modify the following Sass code:
+//
+/*$theme-colors: (
+  "primary": #0074d9,
+  "custom-color": #900
+);*/
 
 
 // Options

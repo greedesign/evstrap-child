@@ -60,3 +60,21 @@ body.navbar-is-fixed-top:not(.page-custom-header) #page {
       }
     }
   }
+
+
+
+/**
+ * Page Submenu
+ */
+
+/** Submenu */
+.sub-menu {
+  margin-top: -150px !important;
+
+  .uagb-columns__columns-6>.uagb-column__wrap {
+    @include media-breakpoint-between(md, lg) {
+      width: 33.333%;
+    }
+  }
+
+}
